@@ -5,40 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trees of Fortune</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Styles for the button with gold glow */
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin-top: 10px;
-            background-color: #ffd700; /* สีทองพื้นฐาน */
-            color: #fff; /* สีข้อความ */
-            border: 2px solid #ffc107; /* สีกรอบปุ่ม */
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.6); /* เงาสีทองเรืองแสง */
-        }
-
-        button:hover {
-            background-color: #ffeb3b; /* สีทองอ่อนเมื่อ hover */
-            box-shadow: 0 6px 12px rgba(255, 215, 0, 0.8); /* เงาสีทองเข้มขึ้นเมื่อ hover */
-        }
-
-        button:disabled {
-            background-color: #9e9e9e;
-            box-shadow: none;
-        }
-    </style>
 </head>
 <body>
     <h1>Trees of Fortune</h1>
-    <div id="container">
-        <img id="character-image" src="" alt="Character Image">
-        <div id="character-name">คลิกปุ่มเพื่อสุ่มตัวละคร</div>
-        <button id="generate-button" onclick="generateCharacter()">สุ่ม</button>
-        <div id="count">จำนวนครั้งที่สุ่ม: 0</div>
-        <div id="progress">ตัวละครที่ได้รับ: 0/48</div>
+    <div id="main-container">
+        <div id="rarity-container">
+            <div class="rarity-title">ระดับความแรร์</div>
+            <div class="rarity-list">
+                <div class="rarity-item secret">???</div>
+                <div class="rarity-item ssr">SSR</div>
+                <div class="rarity-item ur">UR</div>
+                <div class="rarity-item sr">SR</div>
+                <div class="rarity-item r">R</div>
+                <div class="rarity-item uc">UC</div>
+                <div class="rarity-item c">C</div>
+            </div>
+        </div>
+        <div id="character-section">
+            <img id="character-image" src="" alt="Character Image">
+            <div id="character-name">คลิกปุ่มเพื่อสุ่มตัวละคร</div>
+            <button id="generate-button" onclick="generateCharacter()">สุ่ม</button>
+            <div id="count">จำนวนครั้งที่สุ่ม: 0</div>
+            <div id="progress">ตัวละครที่ได้รับ: 0/48</div>
+        </div>
     </div>
 
     <div id="inventory-wrapper">
@@ -54,6 +43,7 @@
             <div id="modal-message"></div>
             <img id="modal-character-image" src="" alt="Modal Character Image">
             <div id="modal-character-name"></div>
+            <div id="modal-character-rarity"></div>
         </div>
     </div>
 
